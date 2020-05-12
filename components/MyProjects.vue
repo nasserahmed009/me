@@ -9,7 +9,7 @@
           v-for="project in projects"
           :key="project.id"
         >
-          <SingleProject :project="project" />
+          <SingleProjectCard :project="project" />
         </div>
       </div>
     </div>
@@ -22,9 +22,12 @@ export default {
     projects() {
       return this.$store.state.projects.projects;
     }
+    // project() {
+    //   return this.$store.state.projects.projects;
+    // }
   },
   components: {
-    SingleProject: () => import("@/components/SingleProject")
+    SingleProjectCard: () => import("@/components/SingleProjectCard")
   }
 };
 </script>

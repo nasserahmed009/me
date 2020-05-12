@@ -8,6 +8,7 @@
         style="color: #f1c40f"
       />
     </div>
+    <Navbar />
     <nuxt />
   </div>
 </template>
@@ -39,6 +40,9 @@ export default {
     return {
       darkTheme: false
     };
+  },
+  components: {
+    Navbar: () => import("@/components/Navbar")
   }
 };
 </script>

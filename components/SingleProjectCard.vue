@@ -1,13 +1,13 @@
 <template>
   <div class="singleProject shadow">
     <img
-      src="https://www.istockphoto.com/resources/images/IllustrationsLanding/Emotions-1174870662.jpg"
+      src="https://cms.qz.com/wp-content/uploads/2019/10/pensive-simian-qz-01.png?w=1600&h=900&crop=1&strip=all&quality=75"
       alt="project image"
     />
     <div class="projectInfo text-center">
       <div class="projectInfoContainer">
         <h2 class="textColor1">{{ project.name }}</h2>
-        <p class="textColor2">{{ project.description.slice(0, 60) }}</p>
+        <p class="textColor2">{{ project.slogan }}</p>
       </div>
     </div>
   </div>
@@ -26,6 +26,8 @@ export default {
 
 <style scoped>
 .singleProject {
+  width: 100%;
+  padding-top: 75%; /* 1:1 Aspect Ratio */
   height: 250px;
   background: red;
   border-radius: 40px;
@@ -44,6 +46,8 @@ export default {
 }
 
 img {
+  position: absolute;
+  top: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
