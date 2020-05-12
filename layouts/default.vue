@@ -10,6 +10,7 @@
     </div>
     <Navbar />
     <nuxt />
+    <Footer />
   </div>
 </template>
 
@@ -42,7 +43,8 @@ export default {
     };
   },
   components: {
-    Navbar: () => import("@/components/Navbar")
+    Navbar: () => import("@/components/Navbar"),
+    Footer: () => import("@/components/Footer")
   }
 };
 </script>
