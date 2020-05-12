@@ -2,7 +2,13 @@
   <div :class="{ darkTheme: darkTheme, lightTheme: !darkTheme }">
     <SideNav :opened="sideNavOpened" />
 
-    <div class="app shadow" :class="{ sideNavOpened: sideNavOpened }">
+    <div
+      class="app shadow"
+      :class="{
+        sideNavOpened: sideNavOpened,
+        blur: sideNavOpened && !isFireFox
+      }"
+    >
       <div class="sideNavOverlay" v-show="sideNavOpened"></div>
       <div class="toggleTheme" @click="toggleTheme">
         <font-awesome-icon :icon="['fas', 'moon']" v-show="!darkTheme" />
@@ -36,7 +42,12 @@
   -moz-transform: scale(0.9);
   pointer-events: none;
   opacity: 0.8;
+}
+.blur {
   filter: blur(2px);
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
 }
 .toggleTheme {
   display: inline-block;
@@ -97,6 +108,12 @@ export default {
     Navbar: () => import("@/components/Navbar"),
     SideNav: () => import("@/components/SideNav"),
     Footer: () => import("@/components/Footer")
+  },
+  computed: {
+    // filter blur is laggy on firefox so i don't add it if the useragent is firefox
+    isFireFox() {
+      return navigator.userAgent.toLowerCase().includes("firefox");
+    }
   },
   methods: {
     toggleTheme() {
