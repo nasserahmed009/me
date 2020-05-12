@@ -6,12 +6,23 @@
     />
     <div class="projectInfo text-center">
       <div class="projectInfoContainer">
-        <h2 class="textColor1">Project name</h2>
-        <p class="textColor2">this is the project description</p>
+        <h2 class="textColor1">{{ project.name }}</h2>
+        <p class="textColor2">{{ project.description.slice(0, 60) }}</p>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    project: {
+      type: Object,
+      required: true
+    }
+  }
+};
+</script>
 
 <style scoped>
 .singleProject {
@@ -21,6 +32,7 @@
   overflow: hidden;
   cursor: pointer;
   position: relative;
+  margin-bottom: 30px;
 }
 
 .singleProject:hover img {
@@ -51,6 +63,6 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
+  width: 90%;
 }
 </style>

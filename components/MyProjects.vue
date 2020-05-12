@@ -4,9 +4,13 @@
       <h1 class="textColor3 text-center bold">👨‍💻 My Projects</h1>
 
       <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-4"><SingleProject /></div>
-        <div class="col-sm-12 col-md-6 col-lg-4"><SingleProject /></div>
-        <div class="col-sm-12 col-md-6 col-lg-4"><SingleProject /></div>
+        <div
+          class="col-sm-12 col-md-6 col-lg-4"
+          v-for="project in projects"
+          :key="project.id"
+        >
+          <SingleProject :project="project" />
+        </div>
       </div>
     </div>
   </div>
@@ -14,6 +18,11 @@
 
 <script>
 export default {
+  computed: {
+    projects() {
+      return this.$store.state.projects.projects;
+    }
+  },
   components: {
     SingleProject: () => import("@/components/SingleProject")
   }
