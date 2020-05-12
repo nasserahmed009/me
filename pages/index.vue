@@ -2,6 +2,7 @@
   <div>
     <Navbar />
     <AppHeader />
+    <Summary />
   </div>
 </template>
 
@@ -9,7 +10,8 @@
 export default {
   components: {
     Navbar: () => import("@/components/Navbar.vue"),
-    AppHeader: () => import("@/components/AppHeader.vue")
+    AppHeader: () => import("@/components/AppHeader.vue"),
+    Summary: () => import("@/components/Summary.vue")
   }
 };
 </script>
