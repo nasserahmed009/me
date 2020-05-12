@@ -3,6 +3,7 @@
     <AppHeader />
     <!-- <Summary /> -->
     <MyProjects />
+    <ContactMe />
   </div>
 </template>
 
@@ -11,7 +12,8 @@ export default {
   components: {
     AppHeader: () => import("@/components/AppHeader.vue"),
     Summary: () => import("@/components/Summary.vue"),
-    MyProjects: () => import("@/components/MyProjects.vue")
+    MyProjects: () => import("@/components/MyProjects.vue"),
+    ContactMe: () => import("@/components/ContactMe.vue")
   }
 };
 </script>
