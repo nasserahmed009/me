@@ -37,6 +37,16 @@
 
 <script>
 export default {
+  mounted() {
+    // check if the route contains hash and go to this hash
+    const hash = this.$route.hash;
+    if (hash.trim()) {
+      this.goToSection(hash);
+    }
+
+    // go to the requested section whenever this event is called
+    this.$eventBus.$on("goToSection", this.goToSection);
+  },
   data() {
     return {
       darkTheme: false
@@ -45,6 +55,22 @@ export default {
   components: {
     Navbar: () => import("@/components/Navbar"),
     Footer: () => import("@/components/Footer")
+  },
+  methods: {
+    goToSection(hash) {
+      // if this hash isn't found on the page
+      if (!$(hash)) return;
+      const scrollTop = $(hash).offset().top;
+      $("html").animate(
+        {
+          scrollTop
+        },
+        800,
+        function() {
+          window.location.hash = hash;
+        }
+      );
+    }
   }
 };
 </script>

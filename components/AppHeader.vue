@@ -7,7 +7,10 @@
           Sunrise chaser with a head full of dreams who enjoys crafting ui
           designs and coding.
         </h4>
-        <a href="#" class="buttonMain shadow bold"
+        <a
+          href="#projects"
+          class="buttonMain shadow bold"
+          @click.prevent="$eventBus.$emit('goToSection', '#projects')"
           >Take a look at my projects !</a
         >
       </div>
@@ -23,8 +26,12 @@ export default {};
 
 <style scoped>
 .appHeader {
+  min-height: calc(100vh - 54px);
   padding: 50px 25px;
   background: var(--bg3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .appHeaderContainer {
   display: flex;

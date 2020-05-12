@@ -22,9 +22,6 @@ export default {
     projects() {
       return this.$store.state.projects.projects;
     }
-    // project() {
-    //   return this.$store.state.projects.projects;
-    // }
   },
   components: {
     SingleProjectCard: () => import("@/components/SingleProjectCard")

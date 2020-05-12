@@ -2,8 +2,8 @@
   <div>
     <AppHeader />
     <!-- <Summary /> -->
-    <MyProjects />
-    <ContactMe />
+    <MyProjects id="projects" />
+    <ContactMe id="contact" />
   </div>
 </template>
 
