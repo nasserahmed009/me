@@ -1,16 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 
 * {
   box-sizing: border-box;
-  transition: all .3s;
-  font-family: 'Rubik', sans-serif;
+  transition: all 0.3s;
+  font-family: "Rubik", sans-serif;
   line-height: 1.8 !important;
-
 }
 
 .darkTheme {
   --bg: #292929;
-  --shadowColor: rgba(255, 255, 255, 0.4);
+  --shadowColor: rgba(255, 255, 255, 0.15);
   --deafult: #000;
   --grey4: #f5f5f5;
   --grey3: #eeeeee;
@@ -20,7 +19,7 @@
 
 .lightTheme {
   --bg: #eaeaea;
-  --shadowColor: rgba(0, 0, 0, 0.3);
+  --shadowColor: rgba(0, 0, 0, 0.15);
   --default: #fff;
   --grey1: #757575;
   --grey2: #616161;
@@ -74,4 +73,12 @@
 
 .bold {
   font-weight: bold;
+}
+
+.flex {
+  display: flex;
+}
+
+.shadow {
+  box-shadow: 0 .5rem 1rem var(--shadowColor) !important;
 }

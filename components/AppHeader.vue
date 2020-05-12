@@ -7,7 +7,7 @@
           Sunrise chaser with a head full of dreams who enjoys crafting ui
           designs and coding.
         </h4>
-        <a href="#" class="buttonMain">Take a look at my projects !</a>
+        <a href="#" class="buttonMain shadow">Take a look at my projects !</a>
       </div>
 
       <img src="@/assets/images/me.png" alt="me" class="me" />
