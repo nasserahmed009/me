@@ -31,7 +31,7 @@ export default {};
   align-items: center;
 }
 img.me {
-  max-width: 40%;
+  max-width: 50%;
 }
 @media (max-width: 720px) {
   .appHeaderContainer {
