@@ -51,7 +51,7 @@ export default {
       }
     },
     closeSideNav() {
-      this.$emit("update:opened", false);
+      this.$eventBus.$emit("closeSideNav");
     }
   },
   watch: {

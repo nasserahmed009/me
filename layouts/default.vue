@@ -1,7 +1,9 @@
 <template>
   <div :class="{ darkTheme: darkTheme, lightTheme: !darkTheme }">
-    <SideNav :opened.sync="sideNavOpened" />
+    <SideNav :opened="sideNavOpened" />
+
     <div class="app shadow" :class="{ sideNavOpened: sideNavOpened }">
+      <div class="sideNavOverlay" v-show="sideNavOpened"></div>
       <div class="toggleTheme" @click="darkTheme = !darkTheme">
         <font-awesome-icon :icon="['fas', 'moon']" v-show="!darkTheme" />
         <font-awesome-icon
@@ -10,6 +12,7 @@
           style="color: #f1c40f"
         />
       </div>
+
       <Navbar />
       <nuxt />
       <Footer />
@@ -18,12 +21,19 @@
 </template>
 
 <style scoped>
+.sideNavOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  /* background: #3498dbcb; */
+}
 .app.sideNavOpened {
   transform: scale(0.9);
   pointer-events: none;
   opacity: 0.8;
-  height: 100vh;
-  overflow: hidden;
+  filter: blur(2px);
 }
 .toggleTheme {
   display: inline-block;
@@ -59,10 +69,12 @@ export default {
 
     //
     this.$eventBus.$on("openNav", () => {
+      $("body").css("overflow", "hidden");
       this.sideNavOpened = true;
     });
 
     this.$eventBus.$on("closeSideNav", () => {
+      $("body").css("overflow", "auto");
       this.sideNavOpened = false;
     });
   },

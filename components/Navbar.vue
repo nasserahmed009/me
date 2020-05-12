@@ -23,6 +23,8 @@ export default {
 <style scoped>
 nav {
   background: var(--bg4);
+  /* position: sticky; */
+  /* top: 200px; */
 }
 .navContainer {
   justify-content: space-between;
