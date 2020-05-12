@@ -2,7 +2,7 @@
   <div class="appHeader">
     <div class="container appHeaderContainer">
       <div class="info">
-        <h1 class="textColor3 bold">Hello, I'm Nasser</h1>
+        <h1 class="textColor3 bold">🙋‍♂️ Hello, I'm Nasser</h1>
         <h4 class="textColor1">
           Sunrise chaser with a head full of dreams who enjoys crafting ui
           designs and coding.

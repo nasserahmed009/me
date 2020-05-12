@@ -51,9 +51,14 @@ img {
   height: 100%;
   object-fit: cover;
 }
+
 h2,
 p {
   color: #fff;
+}
+
+p {
+  font-size: 15px;
 }
 .projectInfo {
   position: absolute;
@@ -69,7 +74,7 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
+  width: 80%;
 }
 .buttonMain:hover {
   background: #fff;

@@ -13,7 +13,7 @@
     <ProjectInfo :project="project" />
 
     <div class="text-center">
-      <a href="" class="buttonMain">back to the home page</a>
+      <a href="/" class="buttonMain">back to the home page</a>
     </div>
   </div>
 </template>

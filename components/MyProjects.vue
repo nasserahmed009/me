@@ -1,7 +1,15 @@
 <template>
   <div class="myProjects">
     <div class="container">
-      <h1 class="textColor3 text-center bold">👨‍💻 My Projects</h1>
+      <div class="flex title">
+        <h1 class="no-margin bold icon">👨‍💻</h1>
+        <div class="text">
+          <h1 class="no-margin bold ">Featured Projects</h1>
+          <span class="textColor1">It would be great to hear from you</span>
+        </div>
+      </div>
+
+      <hr />
 
       <div class="row">
         <div
@@ -30,6 +38,9 @@ export default {
 </script>
 
 <style scoped>
+.title .text {
+  margin-left: 15px;
+}
 .myProjects {
   padding: 50px 25px;
   background: var(--bg2);
