@@ -2,12 +2,14 @@
   <div class="appHeader">
     <div class="container appHeaderContainer">
       <div class="info">
-        <h1 class="grey3Text">Hello, I'm Nasser</h1>
-        <h4 class="grey1Text">
+        <h1 class="textColor3 bold">Hello, I'm Nasser</h1>
+        <h4 class="textColor1">
           Sunrise chaser with a head full of dreams who enjoys crafting ui
           designs and coding.
         </h4>
-        <a href="#" class="buttonMain shadow">Take a look at my projects !</a>
+        <a href="#" class="buttonMain shadow bold"
+          >Take a look at my projects !</a
+        >
       </div>
 
       <img src="@/assets/images/me.png" alt="me" class="me" />
@@ -21,8 +23,8 @@ export default {};
 
 <style scoped>
 .appHeader {
-  padding: 50px 0px;
-  background: var(--bg);
+  padding: 50px 25px;
+  background: var(--bg3);
 }
 .appHeaderContainer {
   display: flex;
