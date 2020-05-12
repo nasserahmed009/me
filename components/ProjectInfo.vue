@@ -1,16 +1,16 @@
 <template>
-  <div>
+  <div class="projectInfo">
     <div class="projectDescription">
       <div class="container">
-        <h2>Project description</h2>
+        <h2 class="textColor1">Project description</h2>
         <hr />
-        <p>{{ project.description }}</p>
+        <p class="textColor2">{{ project.description }}</p>
       </div>
     </div>
 
     <div class="screenshots">
       <div class="container">
-        <h2>Screenshots</h2>
+        <h2 class="textColor1">Screenshots</h2>
         <hr />
 
         <div class="row">
@@ -41,6 +41,9 @@ export default {
 </script>
 
 <style scoped>
+.projectInfo {
+  background: var(--bg2);
+}
 .projectDescription {
   padding: 50px 25px;
 }

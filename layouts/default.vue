@@ -4,7 +4,7 @@
 
     <div class="app shadow" :class="{ sideNavOpened: sideNavOpened }">
       <div class="sideNavOverlay" v-show="sideNavOpened"></div>
-      <div class="toggleTheme" @click="darkTheme = !darkTheme">
+      <div class="toggleTheme" @click="toggleTheme">
         <font-awesome-icon :icon="['fas', 'moon']" v-show="!darkTheme" />
         <font-awesome-icon
           :icon="['fas', 'sun']"
@@ -21,16 +21,19 @@
 </template>
 
 <style scoped>
+.darkTheme {
+  background: #1d2a39e3;
+}
 .sideNavOverlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  /* background: #3498dbcb; */
 }
 .app.sideNavOpened {
   transform: scale(0.9);
+  -moz-transform: scale(0.9);
   pointer-events: none;
   opacity: 0.8;
   filter: blur(2px);
@@ -50,33 +53,39 @@
 .toggleTheme:hover {
   padding-right: 30px;
 }
-.darkTheme {
-  background: var(--bg);
-}
 </style>
 
 <script>
 export default {
   mounted() {
     // check if the route contains hash and go to this hash
-    const hash = this.$route.hash;
-    if (hash.trim()) {
-      this.goToSection(hash);
+    const theme = localStorage.getItem("theme");
+    if (theme == "dark") this.darkTheme = true;
+    else this.darkTheme = false;
+
+    if (process.browser) {
+      window.onNuxtReady(app => {
+        const hash = this.$route.hash;
+
+        if (hash.trim()) {
+          this.goToSection(hash);
+        }
+
+        // go to the requested section whenever this event is called
+        this.$eventBus.$on("goToSection", this.goToSection);
+
+        //
+        this.$eventBus.$on("openNav", () => {
+          $("body").css("overflow", "hidden");
+          this.sideNavOpened = true;
+        });
+
+        this.$eventBus.$on("closeSideNav", () => {
+          $("body").css("overflow", "auto");
+          this.sideNavOpened = false;
+        });
+      });
     }
-
-    // go to the requested section whenever this event is called
-    this.$eventBus.$on("goToSection", this.goToSection);
-
-    //
-    this.$eventBus.$on("openNav", () => {
-      $("body").css("overflow", "hidden");
-      this.sideNavOpened = true;
-    });
-
-    this.$eventBus.$on("closeSideNav", () => {
-      $("body").css("overflow", "auto");
-      this.sideNavOpened = false;
-    });
   },
   data() {
     return {
@@ -90,6 +99,12 @@ export default {
     Footer: () => import("@/components/Footer")
   },
   methods: {
+    toggleTheme() {
+      this.darkTheme = !this.darkTheme;
+
+      const theme = this.darkTheme ? "dark" : "light";
+      localStorage.setItem("theme", theme);
+    },
     goToSection(hash) {
       // if this hash isn't found on the page
       if (!$(hash)) return;

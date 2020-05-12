@@ -10,11 +10,11 @@
       <h2 class="no-margin">🏠</h2>
       <span href="/" class=""> Home</span>
     </a>
-    <a href="/#projects" @click.prevent="goToSection('#projects')">
+    <a href="/#projects" @click="goToSection('#projects')">
       <h2 class="no-margin">👨‍💻</h2>
       <span href="/" class=""> Projects</span>
     </a>
-    <a href="/#contact" @click.prevent="goToSection('#contact')">
+    <a href="/#contact" @click="goToSection('#contact')">
       <h2 class="no-margin">☎️</h2>
       <span href="/" class=""> Get In Touch</span>
     </a>
@@ -76,11 +76,14 @@ export default {
   position: fixed;
   right: 0px;
   top: 0px;
-  background: var(--bg3);
+  background: var(--bg1);
   width: 250px;
   height: 100%;
   z-index: 10;
   transform: translateX(320px);
+  -moz-transform: translateX(320px);
+  -webkit-transform: translateX(320px);
+  -o-transform: translateX(320px);
   padding: 50px 25px;
 }
 .sideNav a {
@@ -89,6 +92,9 @@ export default {
 }
 .sideNav.opened {
   transform: translateX(0);
+  -moz-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -o-transform: translateX(0);
 }
 .iconContainer {
   width: 60px;

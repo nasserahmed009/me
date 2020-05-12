@@ -2,8 +2,8 @@
   <div class="singleProjectView">
     <div class="projectHeader text-center">
       <div class="info">
-        <h1 class="textColor3 bold no-margin">{{ project.name }}</h1>
-        <p class="textColor1">{{ project.slogan }}</p>
+        <h1 class="textColor3 bold no-margin textColor1">{{ project.name }}</h1>
+        <p class="textColor2">{{ project.slogan }}</p>
         <a :href="project.link" class="buttonMain shadow" target="_blank">
           view project
         </a>
@@ -12,9 +12,9 @@
 
     <ProjectInfo :project="project" />
 
-    <div class="text-center">
+    <!-- <div class="text-center">
       <a href="/" class="buttonMain">back to the home page</a>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -36,6 +36,6 @@ export default {
 .projectHeader {
   position: relative;
   padding: 100px 25px;
-  background: var(--bg3);
+  background: var(--bg1);
 }
 </style>

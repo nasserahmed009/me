@@ -2,37 +2,55 @@
 
 * {
   box-sizing: border-box;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
   font-family: "Rubik", sans-serif;
   line-height: 1.8 !important;
 }
 
 .darkTheme {
-  --bg1: #757575;
-  --bg2: #616161;
-  --bg4: #424242;
+  --bg1: #16202b;
+  --bg2: #1d2a39;
+
+  --text1: #fff;
+  --text2: #bebebe;
+
+  --borderColor: #1c2735;
+  /* --bg1: #757575; */
+  /* --bg2: #616161; */
+  /* --bg4: #424242; */
   /* --bg3: #212121; */
-  --bg3: #161616;
+  /* --bg3: #161616; */
 
   --shadowColor: rgba(255, 255, 255, 0.15);
   --deafult: #000;
-  --text4: #f5f5f5;
-  --text3: #eeeeee;
-  --text2: #e0e0e0;
-  --text1: #bdbdbd;
+  /* --text4: #f5f5f5; */
+  /* --text3: #eeeeee; */
+  /* --text2: #e0e0e0; */
+  /* --text1: #bdbdbd; */
 }
 
 .lightTheme {
-  --bg4: #f5f5f5;
+  --bg1: #eee;
+  --bg2: #f7f7f7;
+
+  --text1: #424242;
+  --text2: #757575;
+
+  --borderColor: #ccc;
+
+  /* --bg4: #f5f5f5;
   --bg3: #eeeeee;
   --bg2: #e0e0e0;
-  --bg1: #bdbdbd;
+  --bg1: #bdbdbd; */
   --shadowColor: rgba(0, 0, 0, 0.15);
   --default: #fff;
-  --text1: #757575;
+  /* --text1: #757575;
   --text2: #616161;
   --text3: #424242;
-  --text4: #212121;
+  --text4: #212121; */
 }
 
 .textColor1 {
@@ -43,13 +61,13 @@
   color: var(--text2);
 }
 
-.textColor3 {
-  color: var(--text3);
-}
+/* .textColor3 {
+    color: var(--text3);
+  }
 
-.textColor4 {
-  color: var(--text4);
-}
+  .textColor4 {
+    color: var(--text4);
+  } */
 
 .buttonMain {
   background: #3498db;
@@ -93,4 +111,8 @@
 
 p {
   font-size: 20px;
+}
+
+hr {
+  border-width: 2px;
 }

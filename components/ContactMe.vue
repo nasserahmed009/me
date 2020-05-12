@@ -4,8 +4,8 @@
       <div class="flex title">
         <h1 class="no-margin bold icon">☎️</h1>
         <div class="text">
-          <h1 class="no-margin bold ">Get In Touch</h1>
-          <span class="textColor1">It would be great to hear from you</span>
+          <h1 class="no-margin bold textColor1">Get In Touch</h1>
+          <span class="textColor2">It would be great to hear from you</span>
         </div>
       </div>
 
@@ -78,7 +78,7 @@
           <!-- Send message form -->
           <form @submit.prevent="sendMessage" v-if="!messageSent">
             <div class="form-group">
-              <label for="name">Name</label>
+              <label for="name" class="textColor2">Name</label>
               <input
                 type="text"
                 class="form-control"
@@ -88,7 +88,9 @@
             </div>
 
             <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
+              <label for="exampleInputEmail1" class="textColor2"
+                >Email address</label
+              >
               <input
                 type="email"
                 class="form-control"
@@ -99,7 +101,9 @@
             </div>
 
             <div class="form-group">
-              <label for="exampleFormControlTextarea1">Example textarea</label>
+              <label for="exampleFormControlTextarea1" class="textColor2"
+                >Example textarea</label
+              >
               <textarea
                 class="form-control"
                 id="exampleFormControlTextarea1"
@@ -118,10 +122,10 @@
             <div class="iconContainer">
               <font-awesome-icon :icon="['fas', 'check']" />
             </div>
-            <p class="textColor3">
+            <p class="textColor1">
               Thanks, your message has been recieved successfuly.
               <br />
-              <span class="textColor1">I'll contact you soon</span>
+              <span class="textColor2">I'll contact you soon</span>
             </p>
             <a
               href="/"
@@ -140,7 +144,7 @@
 export default {
   data() {
     return {
-      messageSent: true
+      messageSent: false
     };
   },
   methods: {
@@ -157,6 +161,7 @@ export default {
 }
 .contactMe {
   padding: 50px 25px;
+  background: var(--bg1);
 }
 .socialAccounts div {
   margin: 10px 0px;
@@ -174,6 +179,9 @@ export default {
 input,
 textarea {
   padding: 25px;
+  background: var(--bg2);
+  border-color: var(--borderColor);
+  color: var(--text1);
 }
 textarea {
   resize: vertical;
@@ -181,7 +189,7 @@ textarea {
 }
 .messageSentBox {
   padding: 40px 25px;
-  background: var(--bg3);
+  background: var(--bg2);
 }
 .iconContainer {
   width: 60px;

@@ -1,10 +1,12 @@
 <template>
   <nav class="shadow">
     <div class="container flex navContainer">
-      <h2 class="no-margin bold textColor3">me.</h2>
+      <a href="/">
+        <h2 class="no-margin bold textColor1">me.</h2>
+      </a>
 
-      <div class="icon" id="openSideNav" @click.prevent="openSideNav">
-        <font-awesome-icon :icon="['fas', 'bars']" />
+      <div class="iconContainer" id="openSideNav" @click.prevent="openSideNav">
+        <font-awesome-icon :icon="['fas', 'bars']" style="color:var(--text1)" />
       </div>
     </div>
   </nav>
@@ -22,9 +24,8 @@ export default {
 
 <style scoped>
 nav {
-  background: var(--bg4);
-  /* position: sticky; */
-  /* top: 200px; */
+  background: var(--bg2);
+  padding: 20px 25px;
 }
 .navContainer {
   justify-content: space-between;
@@ -33,5 +34,19 @@ nav {
 .container::before,
 .container::after {
   content: none;
+}
+a {
+  text-decoration: underline;
+}
+.iconContainer {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 57px !important;
+  border-radius: 50%;
+  border: 3px solid var(--text2);
+  color: var(--text2);
+  font-size: 20px;
+  cursor: pointer;
 }
 </style>
