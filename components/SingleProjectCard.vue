@@ -68,13 +68,12 @@ p {
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
   opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .projectInfoContainer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
+  width: 90%;
 }
 .buttonMain:hover {
   background: #fff;

@@ -36,6 +36,7 @@ export default {};
 .appHeaderContainer {
   display: flex;
   align-items: center;
+  max-width: 100%;
 }
 img.me {
   max-width: 50%;

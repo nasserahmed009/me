@@ -115,7 +115,7 @@
 
           <!-- message that appear on sending an email -->
           <div v-else class="text-center messageSentBox">
-            <div class="check-icon">
+            <div class="iconContainer">
               <font-awesome-icon :icon="['fas', 'check']" />
             </div>
             <p class="textColor3">
@@ -183,7 +183,7 @@ textarea {
   padding: 40px 25px;
   background: var(--bg3);
 }
-.check-icon {
+.iconContainer {
   width: 60px;
   height: 60px;
   margin: 0 auto 30px auto;
