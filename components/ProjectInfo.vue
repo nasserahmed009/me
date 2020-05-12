@@ -14,12 +14,13 @@
         <hr />
 
         <div class="row">
-          <div class="col-sm-12 col-md-3" v-for="index in 4" :key="index">
+          <div
+            class="col-sm-12 col-md-3"
+            v-for="(screenshot, index) in project.screenshots"
+            :key="index"
+          >
             <div class="screenshot">
-              <img
-                src="https://cms.qz.com/wp-content/uploads/2019/10/pensive-simian-qz-01.png?w=1600&h=900&crop=1&strip=all&quality=75"
-                alt=""
-              />
+              <img :src="screenshot" :alt="project.name" />
             </div>
           </div>
         </div>

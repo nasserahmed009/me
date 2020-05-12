@@ -4,7 +4,7 @@
       <div class="info">
         <h1 class="textColor3 bold no-margin">{{ project.name }}</h1>
         <p class="textColor1">{{ project.slogan }}</p>
-        <a href="/" class="buttonMain shadow">
+        <a :href="project.link" class="buttonMain shadow" target="_blank">
           view project
         </a>
       </div>

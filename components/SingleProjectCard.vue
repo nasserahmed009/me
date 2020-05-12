@@ -1,13 +1,13 @@
 <template>
   <div class="singleProject shadow">
-    <img
-      src="https://cms.qz.com/wp-content/uploads/2019/10/pensive-simian-qz-01.png?w=1600&h=900&crop=1&strip=all&quality=75"
-      alt="project image"
-    />
+    <img :src="project.thumbnail" :alt="project.name" />
     <div class="projectInfo text-center">
       <div class="projectInfoContainer">
-        <h2 class="textColor1">{{ project.name }}</h2>
-        <p class="textColor2">{{ project.slogan }}</p>
+        <h2>{{ project.name }}</h2>
+        <p>{{ project.slogan }}</p>
+        <a :href="'/project/' + project.id" class="buttonMain shadow"
+          >More info</a
+        >
       </div>
     </div>
   </div>
@@ -30,9 +30,8 @@ export default {
   padding-top: 75%; /* 1:1 Aspect Ratio */
   height: 250px;
   background: red;
-  border-radius: 40px;
+  border-radius: 25px;
   overflow: hidden;
-  cursor: pointer;
   position: relative;
   margin-bottom: 30px;
 }
@@ -52,15 +51,18 @@ img {
   height: 100%;
   object-fit: cover;
 }
+h2,
+p {
+  color: #fff;
+}
 .projectInfo {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   opacity: 0;
-  pointer-events: none;
 }
 .projectInfoContainer {
   position: absolute;
@@ -68,5 +70,8 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
+}
+.buttonMain:hover {
+  background: #fff;
 }
 </style>
