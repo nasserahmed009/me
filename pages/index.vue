@@ -1,7 +1,7 @@
 <template>
   <div>
     <AppHeader />
-    <!-- <Summary /> -->
+    <Summary />
     <MyProjects id="projects" />
     <ContactMe id="contact" />
   </div>

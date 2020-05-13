@@ -13,6 +13,8 @@
 .darkTheme {
   --bg1: #16202b;
   --bg2: #1d2a39;
+  --bg3: #1f3043;
+
 
   --text1: #fff;
   --text2: #bebebe;
@@ -36,6 +38,7 @@
 .lightTheme {
   --bg1: #eee;
   --bg2: #f7f7f7;
+  --bg3: #fff;
 
   --text1: #424242;
   --text2: #757575;
