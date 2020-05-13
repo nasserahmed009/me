@@ -5,7 +5,7 @@
         <h1 class="no-margin bold icon">👨‍💻</h1>
         <div class="text">
           <h1 class="no-margin bold textColor1">Featured Projects</h1>
-          <span class="textColor2">It would be great to hear from you</span>
+          <p class="textColor2">Take a look at some of my projects</p>
         </div>
       </div>
 
