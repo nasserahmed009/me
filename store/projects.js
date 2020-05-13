@@ -6,7 +6,7 @@ export const state = () => ({
     slogan: "Continuing your education remotely has never been easier",
     thumbnail: "/images/nafhamMubasher.jpg",
     link: "http://mubasher.nafham.com/",
-    screenshots: ["/images/nafhamMubasher.jpg"]
+    screenshots: ["/images/nafhamMubasher.jpg", "/images/nafhamMubasher/1.png", "/images/nafhamMubasher/2.png", "/images/nafhamMubasher/3.png"]
   }, {
     id: 2,
     name: "Nafham LifeSkills",
@@ -14,7 +14,7 @@ export const state = () => ({
     slogan: "Learn the skill you need, Now",
     thumbnail: "/images/nafhamLifeSkills.jpg",
     link: "https://lifeskills.nafham.com/",
-    screenshots: ["/images/nafhamLifeSkills.jpg"]
+    screenshots: ["/images/nafhamLifeSkills.jpg", "/images/nafhamLifeSkills/1.png"]
   }, {
     id: 3,
     name: "Spotify ElGhalaba",
@@ -22,7 +22,7 @@ export const state = () => ({
     slogan: "Your best streaming service",
     thumbnail: "/images/spotifyElGhalaba.jpg",
     link: "https://spotify-elghalaba.me/",
-    screenshots: ["/images/spotifyElGhalaba.jpg"]
+    screenshots: ["/images/spotifyElGhalaba.jpg", "/images/spotifyElGhalaba/1.png", "/images/spotifyElGhalaba/2.png", "/images/spotifyElGhalaba/3.png"]
   }, {
     id: 4,
     name: "Shoryan",
