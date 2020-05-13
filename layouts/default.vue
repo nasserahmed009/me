@@ -9,7 +9,7 @@
       }"
     >
       <div class="sideNavOverlay" v-show="sideNavOpened"></div>
-      <div class="toggleTheme" @click="toggleTheme">
+      <div class="toggleTheme" @click="toggleTheme" style="color: #3498db">
         <font-awesome-icon :icon="['fas', 'moon']" v-show="!darkTheme" />
         <font-awesome-icon
           :icon="['fas', 'sun']"
@@ -45,6 +45,7 @@
   opacity: 0.8;
 }
 .toggleTheme {
+  background: var(--text1);
   display: inline-block;
   position: fixed;
   z-index: 1;
@@ -52,12 +53,12 @@
   top: 30%;
   cursor: pointer;
   border-radius: 20px 0px 0px 20px;
-  padding: 20px;
+  padding: 20px 25px;
   box-shadow: 0px 0px 3px 0px var(--shadowColor);
   font-size: 20px;
 }
 .toggleTheme:hover {
-  padding-right: 30px;
+  padding-right: 35px;
 }
 </style>
 
