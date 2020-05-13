@@ -5,7 +5,7 @@
       <div class="projectInfoContainer">
         <h2>{{ project.name }}</h2>
         <p>{{ project.slogan }}</p>
-        <a :href="'/project/' + project.id" class="buttonMain shadow"
+        <a :href="'/project/' + project.slug" class="buttonMain shadow"
           >More info</a
         >
       </div>
