@@ -1,5 +1,5 @@
 <template>
-  <nav class="shadow">
+  <nav :class="{ sideNavOpened: sideNavOpened }">
     <div class="container flex navContainer">
       <a href="/">
         <h2 class="no-margin bold textColor1">me.</h2>
@@ -14,8 +14,19 @@
 
 <script>
 export default {
+  mounted() {
+    this.$eventBus.$on("closeSideNav", () => {
+      this.sideNavOpened = false;
+    });
+  },
+  data() {
+    return {
+      sideNavOpened: false
+    };
+  },
   methods: {
     openSideNav() {
+      this.sideNavOpened = true;
       this.$eventBus.$emit("openNav");
     }
   }
@@ -26,6 +37,13 @@ export default {
 nav {
   background: var(--bg2);
   padding: 20px 25px;
+  position: sticky;
+  top: -1px;
+
+  z-index: 20;
+}
+nav.sideNavOpened {
+  opacity: 0;
 }
 .navContainer {
   justify-content: space-between;
