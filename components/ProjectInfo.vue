@@ -129,7 +129,7 @@ export default {
 .screenshot {
   width: 100%;
   height: 250px;
-  background: red;
+  background: var(--bg1);
   border-radius: 25px;
   overflow: hidden;
   cursor: pointer;

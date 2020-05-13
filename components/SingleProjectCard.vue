@@ -29,7 +29,7 @@ export default {
   width: 100%;
   padding-top: 75%; /* 1:1 Aspect Ratio */
   height: 250px;
-  background: red;
+  background: var(--bg1);
   border-radius: 25px;
   overflow: hidden;
   position: relative;

@@ -9,7 +9,7 @@
         </div>
       </div>
 
-      <hr />
+      <hr style="border-color: var(--helperColor1)" />
 
       <div class="row">
         <!-- social media accounts -->

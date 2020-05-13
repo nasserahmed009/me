@@ -11,7 +11,7 @@
           href="#projects"
           class="buttonMain shadow bold"
           @click.prevent="$eventBus.$emit('goToSection', '#projects')"
-          >Take a look at my projects !</a
+          >Take a look at my projects!</a
         >
       </div>
 
