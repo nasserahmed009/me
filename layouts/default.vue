@@ -5,8 +5,7 @@
     <div
       class="app shadow"
       :class="{
-        sideNavOpened: sideNavOpened,
-        blur: sideNavOpened && !isFireFox
+        sideNavOpened: sideNavOpened
       }"
     >
       <div class="sideNavOverlay" v-show="sideNavOpened"></div>
@@ -36,18 +35,14 @@
   left: 0;
   width: 100%;
   height: 100vh;
+  background: var(--bg1);
+  opacity: 0.7;
 }
 .app.sideNavOpened {
   transform: scale(0.9);
   -moz-transform: scale(0.9);
   pointer-events: none;
   opacity: 0.8;
-}
-.blur {
-  filter: blur(2px);
-  -webkit-filter: blur(2px);
-  -moz-filter: blur(2px);
-  -o-filter: blur(2px);
 }
 .toggleTheme {
   display: inline-block;
@@ -69,34 +64,23 @@
 <script>
 export default {
   mounted() {
-    // check if the route contains hash and go to this hash
+    if (!process.browser) return;
+
     const theme = localStorage.getItem("theme");
     if (theme == "dark") this.darkTheme = true;
     else this.darkTheme = false;
 
-    if (process.browser) {
-      window.onNuxtReady(app => {
-        const hash = this.$route.hash;
-
-        if (hash.trim()) {
-          this.goToSection(hash);
-        }
-
-        // go to the requested section whenever this event is called
-        this.$eventBus.$on("goToSection", this.goToSection);
-
-        //
-        this.$eventBus.$on("openNav", () => {
-          $("body").css("overflow", "hidden");
-          this.sideNavOpened = true;
-        });
-
-        this.$eventBus.$on("closeSideNav", () => {
-          $("body").css("overflow", "auto");
-          this.sideNavOpened = false;
-        });
+    window.onNuxtReady(app => {
+      this.$eventBus.$on("openNav", () => {
+        $("body").css("overflow", "hidden");
+        this.sideNavOpened = true;
       });
-    }
+
+      this.$eventBus.$on("closeSideNav", () => {
+        $("body").css("overflow", "auto");
+        this.sideNavOpened = false;
+      });
+    });
   },
   data() {
     return {
@@ -109,32 +93,13 @@ export default {
     SideNav: () => import("@/components/SideNav"),
     Footer: () => import("@/components/Footer")
   },
-  computed: {
-    // filter blur is laggy on firefox so i don't add it if the useragent is firefox
-    isFireFox() {
-      return navigator.userAgent.toLowerCase().includes("firefox");
-    }
-  },
+
   methods: {
     toggleTheme() {
       this.darkTheme = !this.darkTheme;
 
       const theme = this.darkTheme ? "dark" : "light";
       localStorage.setItem("theme", theme);
-    },
-    goToSection(hash) {
-      // if this hash isn't found on the page
-      if (!$(hash)) return;
-      const scrollTop = $(hash).offset().top;
-      $("html").animate(
-        {
-          scrollTop
-        },
-        800,
-        function() {
-          window.location.hash = hash;
-        }
-      );
     }
   }
 };

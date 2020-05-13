@@ -10,11 +10,16 @@
 <script>
 export default {
   mounted() {
-    //   const hash = this.$route.hash;
-    //   if (hash.trim()) {
-    //     this.goToSection(hash);
-    //   }
-    //   this.$eventBus.$on("goToSection", this.goToSection);
+    window.onNuxtReady(app => {
+      const hash = this.$route.hash;
+
+      if (hash.trim()) {
+        this.goToSection(hash);
+      }
+
+      // go to the requested section whenever this event is called
+      this.$eventBus.$on("goToSection", this.goToSection);
+    });
   },
   components: {
     AppHeader: () => import("@/components/AppHeader.vue"),
@@ -23,20 +28,20 @@ export default {
     ContactMe: () => import("@/components/ContactMe.vue")
   },
   methods: {
-    // goToSection(hash) {
-    //   // if this hash isn't found on the page
-    //   if (!$(hash)) return;
-    //   const scrollTop = $(hash).offset().top;
-    //   $("html").animate(
-    //     {
-    //       scrollTop
-    //     },
-    //     800,
-    //     function() {
-    //       window.location.hash = hash;
-    //     }
-    //   );
-    // }
+    goToSection(hash) {
+      // if this hash isn't found on the page
+      if (!$(hash)) return;
+      const scrollTop = $(hash).offset().top;
+      $("html").animate(
+        {
+          scrollTop
+        },
+        800,
+        function() {
+          window.location.hash = hash;
+        }
+      );
+    }
   }
 };
 </script>
