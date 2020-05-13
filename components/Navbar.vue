@@ -1,5 +1,5 @@
 <template>
-  <nav :class="{ sideNavOpened: sideNavOpened }">
+  <nav :class="{ sideNavOpened: sideNavOpened }" class="shadow">
     <div class="container flex navContainer">
       <a href="/">
         <h2 class="no-margin bold textColor1">me.</h2>

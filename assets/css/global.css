@@ -49,7 +49,7 @@
   --bg3: #eeeeee;
   --bg2: #e0e0e0;
   --bg1: #bdbdbd; */
-  --shadowColor: rgba(0, 0, 0, 0.15);
+  --shadowColor: rgba(0, 0, 0, 0.05);
   --default: #fff;
   /* --text1: #757575;
   --text2: #616161;
@@ -110,7 +110,7 @@
 }
 
 .shadow {
-  box-shadow: 0 .5rem 1rem var(--shadowColor) !important;
+  box-shadow: 0 .1rem .5rem var(--shadowColor) !important;
 }
 
 p {
