@@ -32,6 +32,12 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: this.$route.params.slug.split("-").join(" ")
+    };
+  },
+
   computed: {
     project() {
       const slug = this.$route.params.slug;

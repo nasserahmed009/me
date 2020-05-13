@@ -9,6 +9,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: "me"
+    };
+  },
   mounted() {
     window.onNuxtReady(app => {
       const hash = this.$route.hash;
